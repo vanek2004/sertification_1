@@ -11,26 +11,44 @@
 Console.Write("Введите размер массива --> ");
 int size = Convert.ToInt32(Console.ReadLine());
 
-string[] array = CreateArray(size);
-PrintArray(array);
+string[] arrayOne = CreateArray(size);
+PrintArray(arrayOne);
+
+string[] arrayTwo = new string[arrayOne.Length];
+FindString(arrayOne, arrayTwo);
+PrintArray(arrayTwo);
+
 
 string[] CreateArray(int length)
 {
-    string[] arr = new string[length];
-    for (int i = 0; i < arr.Length; i++)
+    string[] arrOne = new string[length];
+    for (int i = 0; i < arrOne.Length; i++)
     {
-
-        arr[i] = Console.ReadLine();
+        arrOne[i] = Console.ReadLine();
     }
-    return arr;
+    return arrOne;
 }
 
-void PrintArray(string[] arr)
+void PrintArray(string[] array)
 {
-    Console.Write("[");
-    for (int i = 0; i < arr.Length; i++)
+    Console.Write("[ ");
+    for (int i = 0; i < array.Length; i++)
     {
-        Console.Write($"'{arr[i]}'");
+        Console.Write($"{array[i]} ");
     }
     Console.Write("]");
 }
+
+void FindString (string[] arrOne, string[] arrTwo)
+{
+    int count = 0;
+    for (int i = 0; i < arrOne.Length; i++)
+    {
+        if (arrOne[i].Length <= 3)
+        {
+            arrTwo[count] = arrOne[i];
+            count++;
+        }
+    }
+}
+
