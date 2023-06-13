@@ -8,18 +8,18 @@
 // [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 // [“Russia”, “Denmark”, “Kazan”] → []
 
-Console.Write("Введите размер массива --> ");
+Console.Write("Введите размер массива --> ");                        //указываем размер первого массива
 int size = Convert.ToInt32(Console.ReadLine());
 
-string[] arrayOne = CreateArray(size);
+string[] arrayOne = CreateArray(size);                              //вывод массива
 PrintArray(arrayOne);
 
-string[] arrayTwo = new string[arrayOne.Length];
-FindString(arrayOne, arrayTwo);
+string[] arrayTwo = new string[arrayOne.Length];                    //создаем второй массив
+FindString(arrayOne, arrayTwo);                                     // выводим второй массив
 PrintArray(arrayTwo);
 
 
-string[] CreateArray(int length)
+string[] CreateArray(int length)                                    //метод для заполнения первого массива
 {
     string[] arrOne = new string[length];
     for (int i = 0; i < arrOne.Length; i++)
@@ -29,7 +29,7 @@ string[] CreateArray(int length)
     return arrOne;
 }
 
-void PrintArray(string[] array)
+void PrintArray(string[] array)                                  // метод для вывода массива
 {
     Console.Write("[ ");
     for (int i = 0; i < array.Length; i++)
@@ -39,7 +39,7 @@ void PrintArray(string[] array)
     Console.Write("]");
 }
 
-void FindString (string[] arrOne, string[] arrTwo)
+void FindString (string[] arrOne, string[] arrTwo)                   //метод который находит в массиве элементы <= 3 
 {
     int count = 0;
     for (int i = 0; i < arrOne.Length; i++)
